@@ -1,7 +1,7 @@
 {
   "name": "renelle-vscode",
   "displayName": "renelle",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Syntax highlighting for renelle",
   "repository": {
     "type": "git",
