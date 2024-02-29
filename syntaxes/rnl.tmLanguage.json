@@ -1,0 +1,91 @@
+{
+    "name": "renelle",
+    "scopeName": "source.renelle",
+    "fileTypes": [
+      "rnl"
+    ],
+    "patterns": [
+      {
+        "include": "#strings"
+      },
+      {
+        "include": "#comments"
+      },
+      {
+        "include": "#keywords"
+      },
+      {
+        "include": "#constants"
+      }
+    ],
+    "repository": {
+      "strings": {
+        "patterns": [
+          {
+            "name": "string.quoted.double.renelle",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+              {
+                "name": "constant.character.escape.renelle",
+                "match": "\\\\."
+              }
+            ]
+          }
+        ]
+      },
+      "comments": {
+        "patterns": [
+          {
+            "name": "comment.line.renelle",
+            "begin": "#",
+            "end": "$"
+          }
+        ]
+      },
+      "keywords": {
+        "patterns": [
+            {
+                "name": "keyword.control.renelle",
+                "match": "\\b(if|else|return|and|or)\\b"
+            },
+            {
+                "name": "keyword.declaration.renelle",
+                "match": "\\b(let|fn)\\b"
+            }
+        ]
+      },
+      "constants": {
+        "patterns": [
+            {
+                "name": "constant.language.renelle",
+                "match": "\\b(true|false)\\b"
+            }
+        ]
+      },
+      "numbers": {
+        "patterns": [
+            {
+                "name": "constant.numeric.renelle",
+                "match": "\\b\\d+(_\\d+)*\\.?\\d*\\b"
+            }
+        ]
+      },
+      "builtinFunctions": {
+        "patterns": [
+            {
+                "name": "support.function.builtin.renelle",
+                "match": "\\b(print|len|os_args|head|tail|last|push|fst|snd)\\b"
+            }
+        ]
+      },
+      "operators": {
+        "patterns": [
+            {
+                "name": "keyword.operator.renelle",
+                "match": "[+\\-*/=]|\\|>|\\\\|=>|@|%|>|<|>=|<=|==|!=|\\*\\*"
+            }
+        ]
+      }
+    }
+  }

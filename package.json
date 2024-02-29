@@ -1,0 +1,31 @@
+{
+  "name": "renelle-vscode",
+  "displayName": "renelle",
+  "version": "0.0.2",
+  "description": "Syntax highlighting for renelle",
+  "publisher": "alex story",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+        "languages": [{
+            "id": "renelle",
+            "aliases": ["renelle", "Renelle", "rnl"],
+            "extensions": [".rnl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "renelle",
+            "scopeName": "source.rnl",
+            "path": "./syntaxes/rnl.tmLanguage.json"
+        }]
+    },
+  "author": "alex story",
+  "license": "MIT",
+  "devDependencies": {
+    "vscode": "^1.1.37"
+  }
+}
