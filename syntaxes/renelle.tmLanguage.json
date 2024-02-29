@@ -4,18 +4,34 @@
     "fileTypes": [
       "rnl"
     ],
-    "patterns": [
+    "patterns": [       
+      {
+        "include": "#keywords"
+      },     
+      {
+        "include": "#function-declarations"
+      },
       {
         "include": "#strings"
       },
       {
         "include": "#comments"
       },
-      {
-        "include": "#keywords"
-      },
+
       {
         "include": "#constants"
+      },
+      {
+        "include": "#numbers"
+      },
+      {
+        "include": "#builtinFunctions"
+      },
+      {
+        "include": "#operators"
+      },
+      {
+        "include": "#function-calls"
       }
     ],
     "repository": {
@@ -51,7 +67,7 @@
             },
             {
                 "name": "keyword.declaration.renelle",
-                "match": "\\b(let|fn)\\b"
+                "match": "\\b(let)\\b"
             }
         ]
       },
@@ -84,6 +100,31 @@
             {
                 "name": "keyword.operator.renelle",
                 "match": "[+\\-*/=]|\\|>|\\\\|=>|@|%|>|<|>=|<=|==|!=|\\*\\*"
+            }
+        ]
+      },
+      "function-declarations": {
+        "patterns": [
+          {
+            "name": "meta.function.declaration.renelle",
+            "begin": "\\b(fn)\\s+([_a-zA-Z][_a-zA-Z0-9?!]*)",
+            "end": "(?={)",
+            "beginCaptures": {
+              "1": {
+                "name": "keyword.declaration.renelle"
+              },
+              "2": {
+                "name": "entity.name.function.renelle"
+              }
+            }
+          }
+        ]
+      },
+      "function-calls": {
+        "patterns": [
+            {
+              "name": "entity.name.function.renelle",
+              "match": "\\b([_a-zA-Z][_a-zA-Z0-9?!]*)\\s*\\("
             }
         ]
       }

@@ -1,7 +1,7 @@
 {
   "name": "renelle-vscode",
   "displayName": "renelle",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Syntax highlighting for renelle",
   "repository": {
     "type": "git",
@@ -23,10 +23,13 @@
         }],
         "grammars": [{
             "language": "renelle",
-            "scopeName": "source.rnl",
-            "path": "./syntaxes/rnl.tmLanguage.json"
+            "scopeName": "source.renelle",
+            "path": "./syntaxes/renelle.tmLanguage.json"
         }]
     },
+  "scripts": {
+    "build": "vsce package"
+  },
   "author": "alex story",
   "license": "MIT",
   "devDependencies": {
