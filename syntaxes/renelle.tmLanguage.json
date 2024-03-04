@@ -17,7 +17,9 @@
       {
         "include": "#comments"
       },
-
+      {
+        "include": "#modules"
+      },
       {
         "include": "#constants"
       },
@@ -63,12 +65,20 @@
         "patterns": [
             {
                 "name": "keyword.control.renelle",
-                "match": "\\b(if|else|return|and|or|cond|case)\\b"
+                "match": "\\b(if|else|return|and|or|cond|case|module)\\b"
             },
             {
                 "name": "keyword.declaration.renelle",
                 "match": "\\b(let)\\b"
             }
+        ]
+      },
+      "modules": {
+        "patterns": [
+          {
+              "name": "entity.name.type.module.yourlanguage",
+              "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+          }
         ]
       },
       "constants": {
