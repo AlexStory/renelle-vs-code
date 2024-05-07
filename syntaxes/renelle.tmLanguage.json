@@ -65,7 +65,7 @@
         "patterns": [
             {
                 "name": "keyword.control.renelle",
-                "match": "\\b(if|else|return|and|or|cond|case|module)\\b"
+                "match": "\\b(if|else|return|and|or|cond|case|module|with)\\b"
             },
             {
                 "name": "keyword.declaration.renelle",
