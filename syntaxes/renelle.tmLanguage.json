@@ -34,6 +34,12 @@
       },
       {
         "include": "#function-calls"
+      },
+      {
+        "include": "#atoms"
+      },
+      {
+        "include": "#maps"
       }
     ],
     "repository": {
@@ -58,6 +64,14 @@
             "name": "comment.line.renelle",
             "begin": "#",
             "end": "$"
+          }
+        ]
+      },
+      "atoms": {
+        "patterns": [
+          {
+            "name": "constant.language.atom.renelle",
+            "match": ":[a-zA-Z][_a-zA-Z0-9]*"
           }
         ]
       },
@@ -137,6 +151,33 @@
               "match": "\\b([_a-zA-Z][_a-zA-Z0-9?!]*)\\s*\\("
             }
         ]
+      },
+      "maps": {
+          "patterns": [
+              {
+                  "name": "meta.structure.map.renelle",
+                  "begin": "\\{",
+                  "end": "\\}",
+                  "patterns": [
+                      {
+                          "name": "variable.other.key.renelle",
+                          "match": "\\b[_a-zA-Z][_a-zA-Z0-9]*\\b(?=\\s*:)\\s*"
+                      },
+                      {
+                          "include": "#constants"
+                      },
+                      {
+                          "include": "#numbers"
+                      },
+                      {
+                          "include": "#strings"
+                      },
+                      {
+                          "include": "#atoms"
+                      }
+                  ]
+              }
+          ]
       }
     }
   }
